@@ -1,0 +1,22 @@
+<!--components/topInput/topInput.wxml-->
+<template name='topInput'>
+  <navigator url="{{inputConfig.linkTo}}">
+    <view class="page">
+      <view class="page__bd">
+          <view class="weui-search-bar">
+              <view class="weui-search-bar__form">
+                  <view class="weui-search-bar__box">
+                      <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                      <input type="text" class="weui-search-bar__input" placeholder="{{inputConfig.placeHolder}}" value="" />
+                  </view>
+                  <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                      <icon class="weui-icon-search" type="search" size="14"></icon>
+                      <view class="weui-search-bar__text">{{inputConfig.placeHolder}}</view>
+                  </label>
+              </view>
+          </view>
+      </view>
+      <view class="cover"></view>
+    </view>
+    </navigator>
+</template>

@@ -1,0 +1,9 @@
+/* pages/contact/contact.wxss */
+@import '../../components/common/topInput/topInput.wxss';
+@import '/style/contact.wxss';
+.weui-panel:before{
+  border-top:0;
+}
+.weui-panel:after{
+  border-bottom: 0;
+}

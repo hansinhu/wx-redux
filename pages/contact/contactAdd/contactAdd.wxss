@@ -1,0 +1,42 @@
+/* pages/contact/contactAdd/contactAdd.wxss */
+.weui-cells:before{
+  border: none;
+}
+.weui-input {
+  position:absolute;
+  top:30rpx;
+}
+.mr-t-30{
+  margin-top: 30rpx;
+}
+.weui-cell_input{
+  height: 120rpx;
+}
+.place-cover{
+  position:absolute;
+  border-bottom:1px solid #E5E5E5;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  z-index:2;
+  color:#888888;
+  background:#fff;
+  line-height:120rpx;
+  text-indent: 20rpx;
+  transition: all 0.2s linear;
+}
+.place-focus{
+  position:absolute;
+  font-size: 24rpx;
+  border-bottom:0;
+  z-index:2;
+  color:#888888;
+  background:#fff;
+  line-height:36rpx;
+  height: 36rpx;
+}
+.btn-submit {
+    position: fixed;
+    bottom:0
+}

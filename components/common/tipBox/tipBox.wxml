@@ -1,0 +1,4 @@
+<!--components/common/tipBox/tipBox.wxml-->
+<view class='error-tip' wx:if="{{show}}">
+    <text>{{errorText}}</text>
+</view>

@@ -1,0 +1,4 @@
+/* pages/message/searchMessage/searchMessage.wxss */
+@import '../../contact/contact.wxss';
+@import '../message.wxss';
+

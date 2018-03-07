@@ -1,0 +1,49 @@
+<!--pages/more/more.wxml-->
+<view class='overflow-container'>
+    <view class="weui-loadmore" wx:if="{{loading}}">
+        <view class="weui-loading"></view>
+        <view class="weui-loadmore__tips">加载中...</view>
+    </view>
+    <view class='header'>流量概览（最近30天）</view>
+    <view class='flowSurvey'>
+    <view class='flowSurvey_box first'>
+        <view class='flowSurvey_num'>{{FlowSurveyList.sumPv}}</view>
+        <view class='flowSurvey_txt'>浏览次数（PV）</view>
+    </view>
+    <view class='flowSurvey_box'>
+        <view class='flowSurvey_num'>{{FlowSurveyList.sumUv}}</view>
+        <view class='flowSurvey_txt'>独立访客（UV）</view>
+    </view>
+    <view class='flowSurvey_box three'>
+        <view class='flowSurvey_num'>{{FlowSurveyList.averageUvTime}}</view>
+        <view class='flowSurvey_txt'>平均访问时长（时分秒）</view>
+    </view>
+    <view class='flowSurvey_box last'>
+        <view class='flowSurvey_num'>{{FlowSurveyList.averagePvNum}}</view>
+        <view class='flowSurvey_txt'>平均访问页数</view>
+    </view>
+    </view>
+    <view class="statisticsContainer">
+        <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
+    </view>
+    <view class='header'>营销邮件统计</view>
+    <view class='flowSurvey'>
+    <view class='flowSurvey_box first'>
+        <view class='flowSurvey_mailNum'>{{MarketingMailList.total}}</view>
+        <view class='flowSurvey_txt'>发送邮件(封)</view>
+    </view>
+    <view class='flowSurvey_box'>
+        <view class='flowSurvey_mailNum'>{{MarketingMailList.arrivePer}}%</view>
+        <view class='flowSurvey_txt'>送达率</view>
+    </view>
+    <view class='flowSurvey_box three'>
+        <view class='flowSurvey_mailNum'>{{MarketingMailList.readPer}}%</view>
+        <view class='flowSurvey_txt'>阅读率</view>
+    </view>
+    <view class='flowSurvey_box last'>
+        <view class='flowSurvey_mailNum'>{{MarketingMailList.hitPer}}%</view>
+        <view class='flowSurvey_txt'>点击率</view>
+    </view>
+    </view>
+    <button bindtap="bindLogout" class='btnStyle' hover-class="btnStyleActive">退出</button>
+</view>

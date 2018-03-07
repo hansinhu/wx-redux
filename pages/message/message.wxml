@@ -1,0 +1,39 @@
+<import src="../../components/common/topInput/topInput.wxml" />
+
+<template is="topInput" data="{{inputConfig}}" />
+
+
+<view wx:if="{{nullConent}}" class='nullCon'>
+   <image src='../../static/images/nocontent.png'></image>
+  <view>暂无消息</view> 
+</view>
+
+<view class="weui-cells weui-cells_after-title" wx:for='{{message.messageList}}' wx:key="{{index}}" data-data="{{item}}">
+  <navigator url="./messageDetial/messageDetial" bindtouchend="touchendFn" class="weui-cell weui-cell_access" hover-class="weui-cell_active" id="{{item.id}}">
+    <view class="weui-cell__hd">
+      <image class='img-content' src="{{item.sender.avatar || '../../static/images/home/avatar_default.png'}}"></image>
+    </view>
+    <view class="weui-cell__bds mar_t10">
+      <!-- <image src="../../static/images/redsmal.png" class="fl" wx:if="{{item.seen}}"></image> -->
+      <view class='unread-pot' wx:if="{{!item.seen}}"></view>
+      <view class='item-top'>
+        <text class='item-name'>{{item.sender.name || item.sender.email}}</text>
+        <text class='item-time'>{{item.sentTime}}</text>
+      </view>
+      <!-- <view class='sendName fl'>{{item.sender.email}}</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access everTime">{{item.sentTime}}</view> -->
+      <view class='everTitle'>{{item.subject}}</view>
+      <!-- <view class='fl everyContent' wx:if="{{item.text != null}}">{{item.text}}</view> -->
+    </view>
+  </navigator>
+</view>
+<view wx:if="{{isNoMore}}" class="weui-loadmore weui-loadmore_line weui-loadmore_dot">
+
+  <view class="weui-loadmore__tips weui-loadmore__tips_in-line">没有更多信息了</view>
+
+</view>
+
+<view class="weui-loadmore" wx:if="{{message.loading}}">
+  <view class="weui-loading"></view>
+  <view class="weui-loadmore__tips">加载中...</view>
+</view>

@@ -1,0 +1,43 @@
+<!--pages/contact/contact.wxml-->
+<import src="../../components/common/topInput/topInput.wxml"/>
+
+<view class="container">
+  <template is="topInput" data="{{inputConfig}}" />
+  
+  <view wx:if="{{!contact.companyList.length}}" class="no-contact">
+    <image class="no-contact-pic" src="../../static/images/contact/nocompany.png"></image>
+    <text>暂无公司</text>
+  </view>
+
+
+  <view class="{{contact.companyList.length?'weui-cells':'hide'}}">
+    <block
+      wx:for='{{contact.companyList}}' 
+      wx:key="{{index}}">
+      <companyItem 
+      bind:deletEvent="deletCompany"
+      user-item="{{item}}"/>
+    </block>
+  </view>
+
+  <view class="weui-loadmore" wx:if="{{loading}}">
+      <view class="weui-loading"></view>
+      <view class="weui-loadmore__tips">加载中...</view>
+  </view>
+
+  <view wx:if="{{isNoMore && contact.companyList.length>10}}" class="weui-loadmore weui-loadmore_line weui-loadmore_dot">
+      <view class="weui-loadmore__tips weui-loadmore__tips_in-line">没有更多信息了</view>
+  </view>
+
+  <modal hidden="{{hidden}}" 
+    title="{{'删除'}}" 
+    confirm-text="确定" 
+    cancel-text="取消" 
+    bindcancel="cancel" 
+    bindconfirm="confirm">
+    <text class='dele-text'>是否确认删除公司:{{deletName}}</text>
+  </modal>
+  <button 
+    bindtap='addUser' 
+    class="add-btn add-btn1">+</button>
+</view>

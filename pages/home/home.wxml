@@ -1,0 +1,81 @@
+<!--pages/home/home.wxml-->
+<view class='container home-wrapper'>
+    <view class='overview'>
+        <view class='overview-title'>概览（最近30天）</view>
+        <view class='overview-items'>
+            <view class='item-wrapper'>
+                <text class='item-txt'>{{flowData.addContactCount}}</text>
+                <text class='item-name'>新增联系人</text>
+            </view>
+            <view class='item-wrapper'>
+                <text class='item-txt'>{{flowData.msgProductCount}}</text>
+                <text class='item-name'>新增询盘</text>
+            </view>
+            <view class='item-wrapper'>
+                <text class='item-txt'>{{flowData.sumUv}}</text>
+                <text class='item-name'>独立访客（UV）</text>
+            </view>
+        </view>
+    </view>
+
+    <view class='loading-wrapper' wx:if="{{home.loading}}"></view>
+    <view class='dynamic'>
+        <view class='dynamic-title'>最近客户动态</view>
+        <view 
+            wx:if="{{!home.isEmpty}}"
+            wx:for="{{home.actionList}}" 
+            wx:key="{{index}}" 
+            class='active-item' 
+            hover-class="weui-cell_active"
+            bindtap="goDetail" 
+            data-item="{{item}}">
+            <image src="{{item.avatar || '../../static/images/home/avatar_default.png'}}" class='img-wrapper'/>
+            <view class='unread-pot' wx:if="{{item.readFlag == 0}}"></view>
+            <view class='item-right'>
+                <view class='item-top'>
+                    <text class='item-name'>{{item.firstName}}{{item.lastName || ''}}</text>
+                    <text class='item-time'>{{item.formatTime}}</text>
+                </view>
+                <view class='item-bottom'>
+                    <!--邮件追踪  yes-->
+                    <view wx:if="{{item.socialType === 0}}">
+                        <view class="bottom-txt" wx:if="{{item.socialContent.mailMarketingFlag && item.socialContent.trackType === 0}}">打开了营销邮件 {{item.socialContent.emailTitle}}</view>
+                        <view class="bottom-txt" wx:if="{{item.socialContent.mailMarketingFlag && item.socialContent.trackType === 1}}">点击了营销邮件中的链接 {{item.socialContent.emailTitle}}</view>
+                        <view class="bottom-txt" wx:if="{{!item.socialContent.mailMarketingFlag && item.socialContent.trackType === 0}}">打开了邮件 {{item.socialContent.emailTitle}}</view>
+                        <view class="bottom-txt" wx:if="{{!item.socialContent.mailMarketingFlag && item.socialContent.trackType === 1}}">点击了邮件中的链接 {{item.socialContent.emailTitle}}</view>
+                    </view>
+                     <!--邮件收发(收邮件) yes-->
+                     <view class="bottom-txt" wx:if="{{item.socialType===1 && item.socialContent.emailType==0}}">{{item.socialContent.contactName}} {{item.socialContent.contactEmail}} 给我发送了一封邮件</view>  
+
+                    <!--社交信息（facebook）yes-->
+                    <view class="bottom-txt" wx:if="{{item.socialType===2 && item.socialContent.actionType===2 && (item.socialContent.source===1||item.socialContent.source===2)}}"><image src="../../static/images/home/icon_facebook.png" class='icon_facebook' />{{item.firstName}}{{item.lastName || ''}} 在Facebook上给你发了1条私信</view> 
+
+                    <!--社交信息（twitter@提到）yes-->
+                    <view class="bottom-txt" wx:if="{{item.socialType===2 && item.socialContent.source===3 && (item.socialContent.bindingAccount === item.socialContent.receiverId)}}"><image src="../../static/images/home/icon_twitter.png" class='icon_twitter' />{{item.firstName}}{{item.lastName || ''}}(@{{item.socialContent.senderAccountName || ''}}) 在Twitter上@了 你 (@{{item.socialContent.receiverAccountName}})</view> 
+
+                    <!--社交信息（twitter私信 对方发我）yes-->
+                    <view class="bottom-txt" wx:if="{{item.socialType===2 && item.socialContent.source===4 && (item.socialContent.bindingAccount === item.socialContent.receiverId)}}"><image src="../../static/images/home/icon_twitter.png" class='icon_twitter' />{{item.firstName}}{{item.lastName || ''}} (@{{item.socialContent.senderAccountName || ''}}) 在Twitter上给 你(@{{item.socialContent.receiverAccountName}}) 发了一条私信</view> 
+
+                    <!--询盘信息  yes-->
+                    <view class="bottom-txt" wx:if="{{item.socialType === 3}}">在 {{item.socialContent.source}} 提交了一份询盘</view> 
+
+                    <!--访问了官网  yes-->
+                    <view class="bottom-txt" wx:if="{{item.socialType === 11}}">访问了官网</view> 
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="weui-loadmore" wx:if="{{home.loading}}">
+        <view class="weui-loading"></view>
+        <view class="weui-loadmore__tips">加载中...</view>
+    </view>
+    <view wx:if="{{home.noMore}}" class="weui-loadmore weui-loadmore_line weui-loadmore_dot">
+        <view class="weui-loadmore__tips weui-loadmore__tips_in-line weui-loadmore__tips_in-dot"></view>
+    </view>
+
+    <view class='empty-wrapper' wx:if="{{home.isEmpty}}">
+        <image src='../../static/images/home/no_active.png' class='img-empty'/>
+        <text>暂无动态</text>
+    </view>
+
+</view>

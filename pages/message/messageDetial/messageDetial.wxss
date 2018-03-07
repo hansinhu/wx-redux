@@ -1,0 +1,87 @@
+/* pages/message/messageDetial/messageDetial.wxss */
+@import "../../../libs/wxparse/wxParse.wxss";
+view {
+  font-size: 24rpx;
+}
+.detailBox{
+  /* overflow-x: hidden; */
+}
+.detailBox {
+}
+
+.TitleBox {
+  height: 50rpx;
+  padding: 10rpx 0rpx;
+  margin: 0rpx 30rpx 0rpx 30rpx;
+}
+
+.emailCon {
+  height: auto;
+  padding: 5rpx 0rpx 90rpx 0rpx;
+  margin: 0rpx 5rpx 0rpx 5rpx
+}
+
+.mailTitle {
+  margin-top:10rpx; 
+  font-weight: 600;
+  width: 420rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mailTime {
+  margin-top:5rpx;
+  width: 270rpx;
+  text-align: left;
+}
+
+.infoBox {
+  margin-bottom: 10rpx;
+  padding: 20rpx 0rpx;
+  margin: 0rpx 30rpx 0rpx 30rpx
+  
+}
+
+.infoBox  image {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 10rpx;
+  margin-right: 20rpx;
+}
+
+.infoBox  .infoEmail {
+  margin-top: 5rpx;
+  font-weight: 600
+}
+
+.attachBox {
+  height: 100rpx;
+  padding:30rpx 0rpx 100rpx 0rpx;
+  margin: 0rpx 30rpx 0rpx 30rpx
+  
+}
+
+.attachimg {
+  width: 100rpx;
+  height: 100rpx;
+  margin-right:10rpx; 
+}
+
+.ToPcDown {
+}
+
+.downimg {
+  width: 25rpx;
+  height: 25rpx;
+  margin: 6rpx 5rpx;
+}
+.attachName{
+  margin: 10rpx 0 5rpx 10rpx;
+}
+
+.btnBox {
+  position: fixed;
+  bottom: 0rpx;
+  width: 100%
+}

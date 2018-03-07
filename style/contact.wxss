@@ -1,0 +1,164 @@
+.weui-cells{
+  overflow-x: hidden;
+  max-width: 750rpx;
+}
+.weui-cells:before {
+  border-top:0;
+}
+.weui-cells:after {
+  border-top:0;
+}
+
+.right-icon{
+  color:#C7C7CC;
+  font-weight: bold;
+  width: 20rpx;
+  height: 30rpx;
+}
+.dele-text{
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space:nowrap;
+}
+.hide{
+  display: none;
+}
+.no-contact{
+  display: flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items: center;
+  font-size: 28rpx;
+  color: #888888;
+  padding-top: 350rpx;
+}
+
+.no-contact1 {
+    padding-top: 250rpx;
+}
+.no-contact-pic{
+  width: 120rpx;
+  height: 120rpx;
+  margin-bottom: 20rpx;
+}
+.name-view{
+  
+}
+.contact-list-title{
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  text-indent: 30rpx;
+  color: #555555;
+  background-color: #f6f6f6;
+}
+.weui-cells{
+  margin: 0;
+}
+
+.weui-media-box{
+  padding: 0;
+}
+.weui-media-box__title{
+  text-indent:10rpx;
+}
+.weui-media-box__title_in-text{
+  font-size: 32rpx;
+  color: #222222;
+}
+.label-count{
+  font-size: 32rpx;
+  color: #222222;
+}
+.label_media-box{
+  padding:15rpx;
+  position:relative;
+}
+.label_tag_pic{
+  width: 60rpx;
+  height: 60rpx;
+}
+.label_tag_pic_thumb{
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.add-btn{
+  font-size: 60rpx;
+  width:110rpx;
+  height: 110rpx;
+  border-radius: 60rpx;
+  background-color: rgba(0,119,255, 0.9);
+  color: #fff;
+  line-height: 105rpx;
+  position: fixed;
+  right:40rpx;
+  bottom: 50rpx;
+}
+
+.add-btn1 {
+    bottom: 144rpx;
+}
+.add-btn::after{
+  border: none;
+}
+.add-icon{
+  width: 60rpx;
+  height: 60rpx;
+}
+.no-more{
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #666;
+}
+
+
+/*搜索页*/
+.searchbar-result{
+    margin-top: 0;
+    font-size: 14px;
+}
+.searchbar-result:before{
+    display: none;
+}
+
+.tag_title{
+  text-indent: 30rpx;
+}
+
+.weui-icon-search_in-box{
+  line-height:80rpx;
+}
+.weui-icon-clear{
+  line-height:80rpx;
+}
+.weui-search-bar__input{
+  height:80rpx;
+  line-height:80rpx;
+  font-size:26rpx;
+}
+.weui-search-bar__cancel-btn{
+  font-size: 28rpx;
+  line-height:80rpx;
+}
+.weui-search-bar__label{
+  height:80rpx;
+  line-height:80rpx;
+  font-size:26rpx;
+}
+.weui-icon-search{
+  font-size:26rpx;
+  margin-top:8rpx;
+  color: #555555;
+}
+.weui-search-bar__text{
+  font-size:26rpx;
+  color: #555555;
+}

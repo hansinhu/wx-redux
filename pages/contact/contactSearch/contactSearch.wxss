@@ -1,0 +1,9 @@
+/* pages/contact/contactSearch/contactSearch.wxss */
+@import '../contact.wxss';
+.tag_title{
+  font-size: 28rpx;
+  color: #555555;
+  background-color: #f6f6f6;
+  height: 80rpx;
+  line-height: 80rpx;
+}

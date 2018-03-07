@@ -1,0 +1,22 @@
+<!--pages/certify/certify.wxml-->
+<view class='container'>
+    <!-- 认证中 -->
+    <view wx:if="{{type == 1}}" class='certify-wrapper'>
+        <image class='certify-commit' src='../../static/images/certify/commit.png'/>
+        <text class='certify-title'>认证进行中...</text>
+        <text class='certify-txt'>感谢您提交认证，稍后销售专员会与您联系</text>
+    </view>
+
+    <!-- 认证到期 -->
+    <view wx:if="{{type == 2}}" class='certify-wrapper'>
+        <image class='certify-overtime' src='../../static/images/certify/overtime.png'/>
+        <text class='certify-title'>很抱歉，您的账户已到期</text>
+        <text class='certify-txt'>客服电话：400-2354-2315</text>
+    </view>
+
+    <!-- 无网络状态 -->
+    <view wx:if="{{type == 3}}" class='certify-wrapper'>
+        <image class='certify-overtime' src='../../static/images/certify/network.png'/>
+        <text class='certify-title'>网络奔溃，请检查下网络连接</text>
+    </view>
+</view>

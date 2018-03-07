@@ -1,0 +1,6 @@
+{
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "tipBox": "/components/common/tipBox/tipBox"
+    }
+}

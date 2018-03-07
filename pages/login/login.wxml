@@ -1,0 +1,46 @@
+<!--pages/login/login.wxml-->
+<view class='container login-wrapper'>
+    <tipBox show-error="{{showError}}" error-text="{{errorText}}" />
+    <view class='logo-wrap'>
+        <image src='../../static/images/login/logo.png' class='logo'></image>
+    </view>
+    <view class='login-content'>
+        <view class='login-item'>
+            <input 
+                data-name="loginAccount"
+                confirm-type="next"
+                bindinput="bindInput"
+                bindconfirm = "next"
+                placeholder='请输入手机 / 邮箱'
+                value='{{formData.loginAccount}}'
+            />
+        </view>
+        <view class='login-item'>
+            <input 
+                data-name="password" 
+                confirm-type="next"
+                password 
+                bindinput="bindInput"
+                focus='{{focusPwd}}'
+                bindconfirm = "next"
+                placeholder='请输入密码'
+                value='{{formData.password}}'
+            />
+        </view>
+        <view class='login-item item-extra'>
+            <input 
+                data-name="captcha" 
+                confirm-type="go"
+                placeholder='Codes' 
+                focus='{{focusCaptcha}}'
+                bindinput="bindInput"
+                placeholder='请输入校验码'
+                value='{{captcha}}'
+                bindconfirm = "login"
+            />
+            <image src='{{codeSrc}}' class='code-wrap' bindtap="getCode"></image>
+        </view>
+    </view>
+    
+    <button type="primary" loading="{{loading}}" disabled="{{disabled}}" bindtap="login"> 登 录 </button>
+</view>

@@ -1,0 +1,30 @@
+/* components/common/topInput/topInputs.wxss */
+.cover{
+  width:750rpx;
+  height:128rpx;
+  position:absolute;
+  top:0;
+  z-index: 9;
+}
+.weui-search-bar{
+  background-color: #f6f6f6;
+  border-top:0;
+}
+.weui-search-bar__input{
+  height:80rpx;
+  line-height:80rpx;
+  font-size:26rpx;
+}
+.weui-search-bar__label{
+  height:80rpx;
+  line-height:80rpx;
+  font-size:26rpx;
+}
+.weui-icon-search{
+  font-size:26rpx;
+  margin-top:8rpx;
+}
+.weui-search-bar__text {
+  font-size:26rpx;
+  color:#555555;
+}

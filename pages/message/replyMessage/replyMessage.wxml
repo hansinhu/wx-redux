@@ -1,0 +1,42 @@
+<!--pages/message/replyMessage/replyMessage.wxml-->
+<tipBox show-error="{{showError}}" error-text="{{errorText}}" />
+
+<view class="weui-cell weui-cell_input hei100">
+  <view class="weui-cell__hd">
+    <view class="weui-label">收件人</view>
+  </view>
+  <view class="weui-cell__bd">
+    <input class="weui-input" placeholder="收件人名称（123456@dds.com）" value='{{replyList.from}}'  disabled='disabled' />
+  </view>
+</view>
+
+<view class="weui-cell weui-cell_input hei100">
+  <view class="weui-cell__hd">
+    <view class="weui-label">发件人</view>
+  </view>
+  <view class="weui-cell__bd">
+    <input class="weui-input" placeholder="收件人名称（7654321@dds.com）" value='{{replyList.to}}'  disabled='disabled'/>
+  </view>
+</view>
+
+<view class="weui-cell weui-cell_input hei100">
+  <view class="weui-cell__hd">
+    <view class="weui-label">主题</view>
+  </view>
+  <view class="weui-cell__bd">
+    <input class="weui-input" maxlength="-1" placeholder="请输入主题" value='{{getParams.subject}}' bindinput="bindAccountInput"/>
+  </view>
+</view>
+
+<view class="weui-cells weui-cells_after-title textarea">
+  <view class="weui-cell">
+    <view class="weui-cell__bd">
+      <textarea class="weui-textarea" auto-height maxlength="-1"  placeholder="请输入邮件正文" value='{{getParams.text}}' bindinput="bindPwdInput" />
+      <!-- <view class="weui-textarea-counter">0/200</view> -->
+    </view>
+  </view>
+</view>
+
+<view class='botmBtn'>
+  <button  loading="{{loading}}" disabled="{{disabled}}" bindtap='sendMes'>发送</button>
+</view>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "联系",
+  "enablePullDownRefresh":true,
+  "usingComponents": {
+    "userItem": "/components/common/userItem/userItem"
+  }
+}

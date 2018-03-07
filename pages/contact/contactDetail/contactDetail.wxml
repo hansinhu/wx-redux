@@ -1,0 +1,168 @@
+
+<!--pages/contact/company/companyAdd/companyAdd.wxml-->
+<view class="main overflow-container">
+    <view class="com-top-bg"></view>
+
+    <!--顶部面板-->
+    <view class="com-top customers">
+        <!--image src='../../../static/images/company/logo-company.png' alt="公司Logo" class="com-top-img"></image-->
+        <view class="com-top-info">
+            <image src="{{base.avatar!='' ? base.avatar : '/static/images/home/avatar_default.png'}}"></image>
+            <view class="com-top-info-base">
+              <text class="com-top-strong">{{base.firstName||''}}{{base.lastName||''}}</text>
+              <text class="com-top-text-light">{{base.companyName? base.companyName : '—' }}</text>
+              <text class="com-top-text-light">{{base.position? base.position : '—' }}</text>
+            </view>
+
+        </view>
+        <view class="phone-email">
+          <view class="phone" wx:if="{{contact.mobilePhone || contact.telephone}}">
+              <image src='../../../static/images/company/phone.png' ></image>
+              <text>{{contact.mobilePhone || contact.telephone}}</text>
+          </view>
+
+          <view class="email" wx:if="{{contact.mail}}">
+              <image src='../../../static/images/company/email.png'></image>
+              <text>{{contact.mail}}</text>
+          </view>
+          <image wx:if="{{companyInfo.base.avatar}}" class="top-co-avatar" src='{{companyInfo.base.avatar}}' ></image>
+        </view>
+    </view>
+
+    <view class="customers-tab">
+      <view class="com-top-tab">
+            <text class="{{navdt ? 'sel' : ''}}" bindtap="navDT">动态</text>
+            <text class="{{navdt ? '' : 'sel'}}" bindtap="navGK">概览</text>
+      </view>
+      <view class="text-shadow {{navdt ? '' : 'text-shadow-gk'}}"></view>
+    </view>
+
+    <!--顶部面板end-->
+
+
+    <!--feed start-->
+    <view class="com-feed com-feed-customer" wx:if="{{navdt}}" >
+
+
+      <view 
+      class="feed-item" 
+      wx:for="{{timeLineRecords}}" 
+      wx:key="item.contactId" 
+      wx:for-item="item"  
+      wx:if="{{(item.socialType == 0 && item.socialContent.mailMarketingFlag !=null) || (item.socialType == 1 &&item.socialContent.emailType!=1) || (item.socialType == 2&&item.socialContent.bindingAccount != item.socialContent.senderId) || item.socialType == 3 || item.socialType == 11}}">
+          <view class="feed-icon-time" >
+              <view class="ft">
+                <image src="/static/images/contact/icon_email.png"></image>
+                <text class="time">{{item.socialContent.time}}</text>
+              </view>
+          </view>
+
+          <!--邮件追踪-->
+          <view class="feed-board" wx:if="{{item.socialType === 0}}">
+              <view class="tit" wx:if="{{item.socialContent.mailMarketingFlag && item.socialContent.trackType === 0}}">打开了营销邮件</view>
+              <view class="tit" wx:if="{{item.socialContent.mailMarketingFlag && item.socialContent.trackType === 1}}">点击了营销邮件中的链接</view>
+              <view class="tit" wx:if="{{!item.socialContent.mailMarketingFlag && item.socialContent.trackType === 0}}">打开了邮件</view>
+              <view class="tit" wx:if="{{!item.socialContent.mailMarketingFlag && item.socialContent.trackType === 1}}">点击了邮件中的链接</view>
+              <text class="content">{{item.socialContent.emailTitle}}</text>
+          </view>
+
+          <view class="feed-board" wx:if="{{item.socialType != 0}}">
+              <!--邮件收发(发邮件)-->
+              <!--<view class="tit" wx:if="{{item.socialType===1 && item.socialContent.emailType==1}}">你 发送了一封邮件给 {{item.socialContent.contactName}}</view> 
+              <text wx:if="{{item.socialType===1 && item.socialContent.emailType==1}}" class="content">{{item.socialContent.emailTitle||item.socialContent.title}}</text>-->
+
+              <!--邮件收发(收邮件)-->
+              <view class="tit" wx:if="{{item.socialType===1 && item.socialContent.emailType==0}}">收到了一封邮件来自 {{item.socialContent.contactName}}</view> 
+              <text wx:if="{{item.socialType===1 && item.socialContent.emailType==0}}" class="content">{{item.socialContent.emailTitle||item.socialContent.title}}</text>
+
+              <!--社交信息（facebook）-->
+              <view class="tit" wx:if="{{item.socialType===2 && item.socialContent.actionType===2 && (item.socialContent.source===1||item.socialContent.source===2)}}">
+                <image 
+                src="/static/images/home/icon_facebook.png" 
+                class='icon_facebook' />在Facebook上给你发了1条私信</view> 
+
+              <!--社交信息（twitter@提到）-->
+              <view class="tit" wx:if="{{item.socialType===2 && item.socialContent.source===3 && (item.socialContent.bindingAccount === item.socialContent.receiverId)}}">
+              <image 
+              src="/static/images/home/icon_twitter.png" 
+              class='icon_twitter' />在Twitter上@了 你(@{{item.socialContent.receiverAccountName || ''}})</view> 
+
+              <!--社交信息(我 @ 提到别人)-->
+              <!--<view class="tit" wx:if="{{item.socialType===2 && item.socialContent.source===3 && (item.socialContent.bindingAccount === item.socialContent.senderId) && (item.socialContent.senderId!==item.socialContent.receiverId)}}"><image src="/static/images/home/icon_twitter.png" class='icon_twitter' />
+              <image 
+              src="/static/images/home/icon_twitter.png" 
+              class='icon_twitter' />你 在Twitter上@了 (@{{item.socialContent.receiverAccountName || ''}})</view> -->
+
+              <!--社交信息（twitter私信 对方发我）-->
+              <view class="tit" wx:if="{{item.socialType===2 && item.socialContent.source===4 && (item.socialContent.bindingAccount === item.socialContent.receiverId)}}">
+              <image 
+              src="/static/images/home/icon_twitter.png" 
+              class='icon_twitter' />在Twitter上给 你(@{{item.socialContent.receiverAccountName || ''}}) 发了一条私信</view> 
+
+              <!--社交信息 (twitter私信 我发对方)-->
+              <!--<view class="tit" wx:if="{{item.socialType===2 && item.socialContent.source===4 && (item.socialContent.bindingAccount ===item.socialContent.senderId)}}">
+              <image 
+              src="/static/images/home/icon_twitter.png" 
+              class='icon_twitter' />你 在Twitter上给 (@{{item.socialContent.receiverAccountName}}) 发了一条私信</view> -->
+
+              <!--询盘信息-->
+              <view class="tit" wx:if="{{item.socialType === 3}}">在 {{item.socialContent.source}} 提交了一份询盘</view> 
+
+              <!--访问了官网-->
+              <view class="tit" wx:if="{{item.socialType === 11}}">访问了官网</view> 
+          </view>
+
+      </view>
+    </view>
+    <!--feed end-->
+    <view class="bottom-pull" wx:if="{{navdt}}">
+      <view class="weui-loadmore" wx:if="{{loading}}">
+        <view class="weui-loading"></view>
+        <view class="weui-loadmore__tips">加载中...</view>
+      </view>
+      <view wx:if="{{isNoMore && timeLineRecords.length>0}}" class="weui-loadmore weui-loadmore_line weui-loadmore_dot">
+        <view class="weui-loadmore__tips weui-loadmore__tips_in-line">没有更多记录</view>
+      </view>
+      <view wx:if="{{totalCount === 0 && !loading}}" class="no-contact">
+        <image class="no-contact-pic" src="/static/images/contact/icon_active.png"></image>
+        <text>暂无动态</text>
+      </view>
+    </view>
+    
+    <!--概况-->
+    <view class="instructions" wx:if="{{!navdt}}">
+        <view class="cv fb">
+          <image src='/static/images/contact/icon_fb.png'></image>
+          <view>
+            <text>Facebook</text>
+            <text class="lk">{{social.fbUrl || '—'}}</text>
+          </view>
+          <text wx:if="{{social.fbUrl}}" data-url="{{social.fbUrl}}" class="copy-txt" bindtap='copyLink'>复制</text>
+        </view>
+        <view class="cv tw">
+          <image src='/static/images/contact/icon_twitter.png'></image>
+          <view>
+            <text>Twitter</text>
+            <text class="lk">{{social.twUrl || '—'}}</text>
+          </view>
+          <text wx:if="{{social.twUrl}}" data-url="{{social.twUrl}}" class="copy-txt" bindtap='copyLink'>复制</text>
+        </view>
+        <view class="cv linkin">
+          <image src='/static/images/contact/icon_link.png'></image>
+          <view>
+            <text>领英</text>
+            <text class="lk">{{social.linkedUrl || '—'}}</text>
+          </view>
+          <text wx:if="{{social.linkedUrl}}" data-url="{{social.linkedUrl}}" class="copy-txt" bindtap='copyLink'>复制</text>
+        </view>
+    </view>
+
+    <view class="com-detail-operator">
+        <text bindtap='callPhone' class="{{(contact.mobilePhone||contact.telephone)?'tell-text active-text':'tell-text sel'}}">拨打电话</text>
+        <text bindtap='sendMail' class="{{(contact.mail && userMail)?'tell-text call active-text':'tell-text call sel'}}">发邮件</text>
+    </view>
+  <tipBox 
+    show-error="{{showError}}" 
+    error-text="{{errorText}}" 
+  />
+</view>

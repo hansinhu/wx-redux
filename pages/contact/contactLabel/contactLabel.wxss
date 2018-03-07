@@ -1,0 +1,10 @@
+/* pages/contact/contactLabel/contactLabel.wxss */
+@import '../contact.wxss';
+.tag-tile{
+  font-size: 28rpx;
+  color: #555555;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #F6F6F6;
+  text-indent: 30rpx;
+}

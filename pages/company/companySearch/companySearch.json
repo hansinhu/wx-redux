@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "搜索公司",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "companyItem": "/components/common/companyItem/companyItem"
+  }
+}

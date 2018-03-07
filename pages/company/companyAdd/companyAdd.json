@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "添加公司",
+    "usingComponents": {
+        "tipBox": "/components/common/tipBox/tipBox"
+    },
+    "enablePullDownRefresh": false
+}

@@ -1,0 +1,140 @@
+
+@import '../../company/companyDetail/companyDetail.wxss';
+.customers .com-top-img{
+  top:auto;
+  width: 100rpx;
+  height:100rpx;
+  right:20rpx;
+  left:auto;
+  bottom:20rpx;
+}
+.top-co-avatar{
+  width:60rpx;
+  height:60rpx;
+  position:relative;
+  float:right;
+  right:100rpx;
+  top:-30rpx;
+}
+.bottom-pull{
+  position:relative;
+  top:0;
+  z-index:-1;
+  min-height:100rpx;
+}
+.no-contact {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  font-size:28rpx;
+  color:#888888;
+  padding-top:200rpx;
+}
+
+.weui-loadmore{
+  position:absolute;
+  top:0;
+  margin-left:150rpx;
+}
+.weui-loadmore__tips_in-line{
+  background-color:#f1eff6;
+}
+.tit image.icon_twitter,
+.tit image.icon_facebook{
+    width: 32rpx;
+    height: 27rpx;
+    margin-right: 15rpx;
+}
+.customers .com-top-info{
+  border-bottom:none;
+}
+
+.com-top-info image{
+  border-radius: 50%;
+}
+.customers{
+  z-index: 2;
+}
+
+.com-top-info-base{
+  
+}
+
+.customers .com-top-strong{
+  width: 70%;
+}
+.customers-tab{
+  position: absolute;
+  width: 100%;
+  height:186rpx;
+  top:290rpx;
+  background-color: #fff;
+  z-index: 1;
+  border-top:1rpx #d6dfe8 solid;
+  border-bottom:1rpx #d6dfe8 solid;
+}
+
+.com-top-info{
+  padding-top: 50rpx;
+}
+
+.com-top-info text{
+  overflow: hidden;
+  text-align: left;
+  padding-left: 20rpx;
+  line-height: 40rpx;
+}
+.com-top-info image{
+  width: 120rpx;
+  height: 120rpx;
+  float: left;
+}
+.phone-email {
+  position: absolute;
+  font-size: 24rpx;
+  width:100%;
+  bottom:0;
+  clear: both;
+}
+.txt, .tit{
+  font-size:24rpx;
+}
+.phone-email .phone,.phone-email .email{
+  clear: both;
+  width:100%;
+}
+.phone-email{
+  padding: 20rpx 40rpx;
+}
+.phone text , .phone image ,.email text , .email image {
+  float: left;
+  color:#000;
+}
+
+.phone image,.email image{
+  width: 26rpx;
+  height:26rpx;
+  margin: 8rpx 10rpx 0 0 ;
+}
+.instructions{
+  margin-top:458rpx;
+}
+
+.com-feed-customer{
+  padding-top: 105rpx;
+}
+.com-feed {
+  position:relative;
+  padding-left:40rpx;
+  top: 0;
+}
+
+.email image{
+  width: 26rpx;
+  height:19rpx;
+   margin: 12rpx 10rpx 0 0 ;
+}
+.main{
+  padding-top: 370rpx;
+}

@@ -1,0 +1,134 @@
+/* pages/home/home.wxss */
+.home-wrapper {
+    font-family: PingFangSC-Regular;
+     display: flex;
+    flex-direction: column;
+}
+.overview {
+    background-image: linear-gradient(-180deg, #00BBFF 0%, #0077FF 100%);
+    color: #fff;
+    padding: 4%;
+
+    position:fixed;
+    width:92%;
+    z-index:100;
+}
+.overview-title {
+    font-size:28rpx;
+    margin-bottom: 20rpx;
+}
+.overview-items {
+    display: flex;
+    flex-direction: row;
+
+}
+.item-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+.item-txt {
+    font-size: 48rpx;
+}
+.item-name {
+    font-size: 24rpx;
+}
+.dynamic-title {
+    font-size: 28rpx;
+    color: #555555;
+    padding: 4%;
+    margin-top:240rpx;    
+}
+.active-item {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1rpx solid #eee;
+    padding: 4%;
+    position: relative;
+}
+.img-wrapper {
+    width: 88rpx;
+    height: 88rpx;
+    margin-right: 20rpx;
+    border-radius:50%;
+}
+.unread-pot {
+    width: 23rpx;
+    height: 24rpx;
+    background: #0077FF;
+    border: 2px solid #FFFFFF;
+    border-radius: 50%;
+    position: absolute;
+    left:95rpx;
+}
+.item-right {
+    flex: 1;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+.item-top {
+    display: flex;
+    flex-direction: row;
+}
+.item-top .item-name{
+    font-family: HelveticaNeue-Medium;
+    font-size: 32rpx;
+    color: #222222;
+    flex:1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+.item-time {
+    font-size: 24rpx;
+    color: #888888;
+    margin-top: 7rpx;
+    margin-left: 10rpx;
+}
+.item-bottom {
+    font-size: 28rpx;
+    color: #888888;
+}
+.bottom-txt {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.empty-wrapper {
+    font-size: 28rpx;
+    color: #888888;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column    
+}
+.img-empty {
+    width: 120rpx;
+    height: 120rpx;
+    margin-bottom: 20rpx;
+}
+
+.loading-wrapper {
+    height: 118rpx;
+    background-image: linear-gradient(-180deg, #FFFFFF 0%, rgba(255,255,255,0.00) 100%);
+    top:240rpx;
+    position:fixed;
+    width:100%;
+    z-index:101;
+}
+.icon_twitter {
+    width: 32rpx;
+    height: 27rpx;
+    margin-right: 10rpx;
+    vertical-align:sub;
+}
+.icon_facebook {
+    width: 32rpx;
+    height: 32rpx;
+    margin-right: 10rpx;
+    vertical-align:sub;
+}

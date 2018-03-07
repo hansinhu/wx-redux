@@ -1,0 +1,44 @@
+<view class="{{params.tagIds?'page__bd':'page__bd'}}">
+  <view class="weui-search-bar">
+    <view class="weui-search-bar__form">
+      <view class="weui-search-bar__box">
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        <input type="text" confirm-type="搜索" focus="true" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" bindinput="inputTyping" />
+        <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+          <icon type="clear" size="14"></icon>
+        </view>
+      </view>
+      <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+        <icon class="weui-icon-search" type="search" size="14"></icon>
+        <view class="weui-search-bar__text">搜索</view>
+      </label>
+    </view>
+    <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+  </view>
+</view>
+
+
+<view class="weui-cells weui-cells_after-title" wx:for='{{messageList}}' wx:key="{{index}}" data-data="{{item}}">
+  <navigator url="../messageDetial/messageDetial" bindtouchend="touchendFn" class="weui-cell weui-cell_access" hover-class="weui-cell_active" id="{{item.id}}">
+    <view class="weui-cell__hd">
+      <image src="{{item.sender.avatar || '../../../static/images/home/avatar_default.png'}}"></image>
+    </view>
+    <view class="weui-cell__bds mar_t10">
+      <view class='item-top'>
+        <text class='item-name'>{{item.sender.email}}</text>
+        <text class='item-time'>{{item.sentTime}}</text>
+      </view>
+      <view class='everTitle'>{{item.subject}}</view>
+      <view class='fl everyContent' wx:if="{{item.text != null}}">{{item.text}}</view>
+    </view>
+  </navigator>
+</view>
+
+<view class="weui-loadmore" wx:if="{{loading}}">
+  <view class="weui-loading"></view>
+  <view class="weui-loadmore__tips">加载中...</view>
+</view>
+
+<view wx:if="{{noCon}}"  class='nullCon'>
+  <view>未搜索到相关内容</view>
+</view>

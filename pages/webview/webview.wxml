@@ -1,0 +1,3 @@
+<!--pages/webview/webview.wxml-->
+<web-view wx:if="url" src="{{url}}"></web-view>
+<view wx:if="!url">无法打开此页面</view>

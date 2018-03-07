@@ -1,0 +1,51 @@
+/**app.wxss**/
+@import 'style/weui.wxss';
+page{
+    height: 100%
+}
+.page-bg{
+  background-color: #F6F6F6;
+}
+.container {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box; 
+} 
+.overflow-container {
+    width: 100%;
+    overflow-x: hidden
+}
+.overflow-container-y {
+    height: 100%;
+    overflow-y: hidden
+}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+
+button[type="primary"],
+.button-hover[type="primary"],
+button[loading][type="primary"] {
+    /* background-color: #0077FF; */
+    background-image: -webkit-linear-gradient(left,#00BBFF,#0077FF);
+}
+
+button[disabled][type="primary"] {
+    background: #F8F8F8;
+    color: #888888;
+}
+button{
+    height: 94rpx;
+    line-height: 94rpx;
+    font-size: 36rpx;
+    width: 100%;
+    border: none;
+    border-radius: 0; 
+}
+
+.weui-search-bar__cancel-btn {
+    color: #0077FF;
+}

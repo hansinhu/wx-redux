@@ -1,0 +1,76 @@
+<!--pages/contact/contact.wxml-->
+<import src="../../components/common/topInput/topInput.wxml"/>
+
+<view class="container">
+  <template is="topInput" data="{{inputConfig}}" />
+  <view class="weui-panel weui-panel_access" style="margin-top:0;">
+    <view class="weui-panel__bd">
+        <navigator 
+          url="./contactLabel/contactLabel" 
+          class="label_media-box weui-media-box_appmsg" 
+          hover-class="weui-cell_active"
+          style="border-bottom:1px solid #E5E5E5;">
+            <view class="weui-media-box__hd label_tag_pic">
+                <image class="weui-media-box__thumb label_tag_pic_thumb" src="/static/images/contact/label.png" />
+            </view>
+            <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                <view class="weui-media-box__title"> 标签</view>
+            </view>
+            <image src='/static/images/icon_right.png' class="right-icon"></image>
+        </navigator>
+        <navigator 
+          url="../company/company" 
+          class="label_media-box weui-media-box_appmsg" 
+          hover-class="weui-cell_active">
+            <view class="weui-media-box__hd label_tag_pic">
+                <image class="weui-media-box__thumb label_tag_pic_thumb"  src="/static/images/contact/company.png" />
+            </view>
+            <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                <view class="weui-media-box__title"> 公司</view>
+            </view>
+            <image src='/static/images/icon_right.png' class="right-icon"></image>
+        </navigator>
+    </view>
+  </view>
+
+  
+
+  <view  class="contact-list-title" ><text>联系人</text></view>
+  
+
+  <view class="{{contact.contactList.length?'weui-cells':'hide'}}">
+    <block
+      wx:for='{{contact.contactList}}' 
+      wx:key="{{index}}">
+      <userItem 
+      bind:deletEvent="deletUser"
+      user-item="{{item}}"/>
+    </block>
+  </view>
+
+  <view wx:if="{{!contact.contactList.length && !loading}}" class="no-contact no-contact1">
+    <image class="no-contact-pic" src="../../static/images/contact/nocontact.png"></image>
+    <text>暂无联系人</text>
+  </view>
+
+  <view class="weui-loadmore" wx:if="{{loading}}">
+      <view class="weui-loading"></view>
+      <view class="weui-loadmore__tips">加载中...</view>
+  </view>
+
+  <view wx:if="{{isNoMore && contact.contactList.length>10}}" class="weui-loadmore weui-loadmore_line weui-loadmore_dot">
+      <view class="weui-loadmore__tips weui-loadmore__tips_in-line">没有更多信息了</view>
+  </view>
+
+  <modal hidden="{{hidden}}" 
+    title="{{'删除'}}" 
+    confirm-text="确定" 
+    cancel-text="取消" 
+    bindcancel="cancel" 
+    bindconfirm="confirm">
+    <text class='dele-text'>是否确认删除联系人:{{deletName}}</text>
+  </modal>
+  <button 
+    bindtap='addUser' 
+    class="add-btn">+</button>
+</view>

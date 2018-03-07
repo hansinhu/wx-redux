@@ -1,0 +1,89 @@
+/* pages/more/more.wxss */
+page{
+  background: #F6F6F6
+}
+.header{
+  font-size: 28rpx;
+  margin:20rpx;
+  color: #555555;
+}
+.refresh-loading {
+    position:absolute;
+    top:50%;
+    width:100%;
+    margin:20rpx auto;
+}
+.flowSurvey{
+  width: 95%;
+  overflow: hidden;
+  background: #fff;
+  text-align: center;
+  padding: 0 20rpx;
+}
+.flowSurvey_box{
+  float: left;
+  padding: 10rpx 40rpx;
+  width: 275rpx;
+  height: 160rpx;
+}
+.first{
+  border-right: 2rpx solid #eee;
+  
+}
+.last{
+  border-top: 2rpx solid #eee;
+  border-bottom: 2rpx solid #eee;
+}
+.three{
+  border-top: 2rpx solid #eee;
+  border-right: 2rpx solid #eee;
+  border-bottom: 2rpx solid #eee;
+}
+.flowSurvey_num{
+  font-size: 48rpx;
+  color: #0077FF;
+  margin-bottom: 8rpx;
+  margin-top: 14rpx;
+}
+.flowSurvey_mailNum{
+  font-size: 48rpx;
+  color: #222;
+  margin-bottom: 8rpx;
+  margin-top: 14rpx;
+}
+.flowSurvey_txt{
+  font-size: 24rpx;
+  color: #555555;
+}
+.statisticsContainer {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    -webkit-text-size-adjust:none;
+    -webkit-user-select: none;
+    font-size: 35rpx;
+    color: #333;
+    font-family: Helvetica,Arial,"Helvetica Neue","Droid Sans","Microsoft YaHei",sans-serif;
+    background: #fff;
+    padding: 30px 0
+}
+.canvas {
+    width: 100%;
+    height: 200px;
+}
+.btnStyle{
+  background-color: #FFFFFF !important;
+  color: #555555 !important;
+  margin-top: 40rpx;
+  margin-bottom: 32rpx;
+  border: 0px !important;
+  border-radius: 0px !important;
+}
+.btnStyleActive{
+  background-color: #ccc !important;
+  color: #555555 !important;
+  margin-top: 40rpx;
+  margin-bottom: 32rpx;
+  border: 0px !important;
+  border-radius: 0px !important;
+}

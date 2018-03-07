@@ -1,0 +1,112 @@
+<!--pages/contact/contactAdd/contactAdd.wxml-->
+<view class="container page-bg overflow-container-y">
+  <tipBox 
+    show-error="{{showError}}" 
+    error-text="{{errorText}}" 
+  />
+  <view class="weui-cells weui-cells_after-title mr-t-30">
+      <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__bd">
+              <input 
+                value="{{params.firstName}}"
+                maxlength="100"
+                
+                bindblur="inputBlur"
+                confirm-type="next"
+                data-name="firstName"
+                focus='{{focusFirstName}}'
+                bindconfirm = "next"
+                class="weui-input" />
+          </view>
+          <view 
+            class="{{focusFirstName || params.firstName?'place-cover place-focus':'place-cover'}}" 
+            data-name="firstName" 
+            bindtap="showInput">firstName(必填)</view>
+      </view>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__bd">
+              <input 
+                value="{{params.lastName}}"
+                maxlength="100"
+                
+                bindblur="inputBlur"
+                confirm-type="next"
+                data-name="lastName"
+                focus='{{focusLastName}}'
+                bindconfirm = "next"
+                class="weui-input" />
+          </view>
+          <view 
+            class="{{focusLastName||params.lastName?'place-cover place-focus':'place-cover'}}" 
+            data-name="lastName" 
+            bindtap="showInput">Last Name</view>
+      </view>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__bd">
+              <input 
+                value="{{params.position}}"
+                maxlength="100"
+                
+                bindblur="inputBlur"
+                confirm-type="next"
+                data-name="position"
+                focus='{{focusPosition}}'
+                bindconfirm = "next"
+                class="weui-input" />
+          </view>
+          <view 
+            class="{{focusPosition||params.position?'place-cover place-focus':'place-cover'}}" 
+            data-name="position" 
+            bindtap="showInput">职位</view>
+      </view>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__bd">
+              <input 
+                value="{{params.email}}"
+                maxlength="100"
+                
+                bindblur="inputBlur"
+                confirm-type="next"
+                data-name="email"
+                focus='{{focusEmail}}'
+                bindconfirm = "next"
+                class="weui-input" />
+          </view>
+          <view 
+            class="{{focusEmail||params.email?'place-cover place-focus':'place-cover'}}" 
+            data-name="email" 
+            bindtap="showInput">Email</view>
+      </view>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__bd">
+              <input 
+                value="{{params.mobilePhone}}"
+                maxlength="100"
+                
+                bindblur="inputBlur"
+                data-name="mobilePhone"
+                class="weui-input" 
+                focus='{{focusMobile}}'
+                confirm-type="done"
+                bindconfirm = "subUser" />
+          </view>
+          <view 
+            class="{{focusMobile||params.mobilePhone?'place-cover place-focus':'place-cover'}}" 
+            data-name="mobilePhone" 
+            bindtap="showInput">手机</view>
+      </view>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+      <button  disabled='{{!params.firstName}}' bindtap='subUser' class="weui-btn btn-submit" type="primary">提交</button>
+  </view>
+
+</view>
+

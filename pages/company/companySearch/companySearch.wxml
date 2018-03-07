@@ -1,0 +1,62 @@
+<!--pages/contact/contactSearch/contactSearch.wxml-->
+<view class="{{contact.companySearchList.length?'container':'container page-bg'}}">
+    <view class="page__bd">
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input 
+                      type="text"
+                      confirm-type="搜索"
+                      focus="true" 
+                      class="weui-search-bar__input" 
+                      placeholder="搜索" 
+                      value="{{inputVal}}" 
+                      bindinput="inputTyping" />
+                    <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
+                </view>
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">搜索</view>
+                </label>
+            </view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+        </view>
+    </view>
+
+  <view wx:if="{{!contact.companySearchList.length && !loading}}" class="no-contact" style="padding-top:400rpx;">
+    <text>未搜索到相关内容</text>
+  </view>
+
+
+  <view class="weui-cells">
+    <block
+      wx:for='{{contact.companySearchList}}' 
+      wx:key="{{index}}">
+      <companyItem 
+      bind:deletEvent="deletCompany"
+      user-item="{{item}}"/>
+    </block>
+  </view>
+
+  <view class="weui-loadmore" wx:if="{{loading}}">
+      <view class="weui-loading"></view>
+      <view class="weui-loadmore__tips">加载中...</view>
+  </view>
+
+  <view wx:if="{{isNoMore && contact.companySearchList.length>10}}" class="weui-loadmore weui-loadmore_line weui-loadmore_dot">
+      <view 
+        class="weui-loadmore__tips weui-loadmore__tips_in-line">没有更多内容了</view>
+  </view>
+
+  <modal hidden="{{hidden}}" 
+    title="{{'删除'}}" 
+    confirm-text="确定" 
+    cancel-text="取消" 
+    bindcancel="cancel" 
+    bindconfirm="confirm">
+    <text class='dele-text'>是否确认删除联系人:{{deletName}}</text>
+  </modal>
+</view>

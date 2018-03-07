@@ -1,0 +1,40 @@
+<!--pages/message/messageDetial/messageDetial..wxml-->
+<import src="../../../libs/wxparse/wxParse.wxml" />
+<view class='detailBox'>
+  <view class='infoBox'>
+    <image src="{{detailList.sender.avatar || '../../../static/images/home/avatar_default.png'}}" class='fl'></image>
+    <view class='fl'>
+      <view class='infoEmail'>{{detailList.sender.name || detailList.sender.email }}</view>
+      <view class='mailTime '>{{detailList.sentTime}}</view>
+    </view>
+  </view>
+  <view class='TitleBox'>
+    <view class='mailTitle fl'>{{detailList.subject}}</view>
+  </view>
+
+  <view class='emailCon'>
+    <view>
+       <template is="wxParse" data="{{wxParseData:article.nodes}}" /> 
+    </view>
+  </view>
+  <view class='attachBox' wx:if="{{detailList.withAttach}}">
+    <image src='../../../static/images/attach.png' class='fl attachimg'></image>
+    <view class='fl'>
+      <view class='attachName'>{{attachName}}</view>
+      <view class='ToPcDown'>
+        <image src='../../../static/images/titles.png' class='fl downimg'></image>
+        请登录至电脑端下载
+      </view>
+    </view>
+  </view>
+  <view class='btnBox'>
+
+    <button bindtap="replyTo" wx:if="{{showOrhide}}" type='primary'>回复</button>
+    <button bindtap="addTocontact" loading="{{loading}}" wx:if="{{!showOrhide}}" type='primary'>{{addToCon}}</button>
+
+  </view>
+  <view class="weui-loadmore" wx:if="{{resetload}}">
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore__tips">加载中...</view>
+  </view>
+</view>

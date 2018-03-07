@@ -1,0 +1,3 @@
+/* pages/contact/contact.wxss */
+@import '../../components/common/topInput/topInput.wxss';
+@import '/style/contact.wxss';

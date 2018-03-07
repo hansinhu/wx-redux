@@ -1,0 +1,20 @@
+/* pages/message/replyMessage/replyMessage.wxss */
+view{
+  font-size: 28rpx;
+}
+.textarea{
+  height:900rpx;
+    overflow:scroll;
+}
+.botmBtn{
+  width: 750rpx;
+  position: fixed;
+  bottom: 0rpx;
+   
+}
+.hei100{height: 100rpx}
+ .botmBtn button{
+  width: 750rpx;
+  background: #0077FF;
+  color: #ffffff;
+} 

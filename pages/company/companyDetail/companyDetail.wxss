@@ -1,0 +1,274 @@
+/* pages/company/companyDetail/companyDetail.wxss */
+.com-top-bg{
+  height:290rpx;
+  width: 100%;
+  background-image: linear-gradient(-180deg, #00BBFF 0%, #0077FF 100%);
+  position: absolute;
+  left: 0;
+  top:0;
+}
+.bottom-pull{
+  position:relative;
+  top:-400rpx;
+  z-index:-1;
+}
+.weui-loadmore{
+  position: absolute;
+  top: 200rpx;
+  margin-left:150rpx;
+}
+.weui-loadmore__tips_in-line{
+  background-color:#f1eff6;
+}
+
+.main{
+  position: relative;
+  padding: 590rpx 0 150rpx 0;
+}
+
+.com-top{
+  width: 706rpx;
+  position: absolute;
+  height: 320rpx;
+  border:1rpx #d6dfe8 solid;
+  left:50%;
+  margin-left: -354rpx;
+  top:60rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+
+.com-top-img{
+  width: 120rpx;
+  height:120rpx;
+  /* background-color: #d7d7d7; */
+  position: absolute;
+  top: 30rpx;
+  left:50%;
+  margin-left: -60rpx;
+  border-radius: 50%;
+}
+.com-top-info{
+  text-align: center;
+  padding: 150rpx 10rpx 30rpx 10rpx;
+  margin: 0 20rpx;
+}
+.com-top-strong{
+  font-size:32rpx;
+  text-align: center;
+  font-weight: bold;
+  display: block;
+  color:#000;
+  width: 100%;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+.com-top-text-light , .com-top-text-link{
+  color:#888;
+  display: block;
+  font-size:26rpx;
+}
+.com-top-text-link{
+  color:#26adfa;
+}
+
+.tab-box{
+  position:relative;
+  top:-300rpx;
+  height:186rpx;
+  background:#fff;
+}
+
+.com-top-tab{
+  position:relative;
+  height:75rpx;
+  top:100rpx;
+
+}
+.com-top-tab text{
+  float: left;
+  font-size: 30rpx;
+  height:75rpx;
+  line-height: 75rpx;
+  text-align: center;
+  width: 50%;
+  color:#999;
+}
+
+.com-top-tab text.sel{
+  color:#0077FF;
+}
+
+.text-shadow{
+  position:absolute;
+  left: 0;
+  width:375rpx;
+  height:7rpx;
+  background-color:#0077FF;
+  top:180rpx;
+  transition: all 0.2s linear;
+}
+
+.text-shadow-gk{
+  left:375rpx;
+}
+
+.feed-icon-time{
+  height:135rpx;
+  position: relative;
+}
+
+.ft{
+  position: absolute;
+  left:-22rpx;
+  top:40rpx;
+}
+
+.feed-icon-time image{
+  width: 40rpx;
+  height:40rpx;
+  border-radius: 50%;
+  float: left;
+  background-color: #0077FF;
+}
+
+
+.feed-icon-time text{
+  font-size: 24rpx;
+  float: left;
+  color:#999;
+  margin: 0 0 0 20rpx;
+}
+
+.feed-board{
+  margin:0 20rpx 0 32rpx;
+  padding: 20rpx;
+  background-color: #fff;
+  border:1rpx #d6dfe8 solid;
+  border-radius: 10rpx;
+}
+.feed-item{
+  border-left: 2px solid rgba(0,119,255,0.40);
+}
+
+.feed-board text{
+  color:#666;
+  font-size: 24rpx;
+  line-height: 1.5;
+}
+
+.feed-board .tit{
+  font-size: 32rpx;
+  color: #222222;
+}
+
+.feed-board .light{
+  font-size: 32rpx;
+  color: #222222;
+  display: inline-block;
+}
+
+.feed-board .content{
+  padding-top: 20rpx;
+  display: block;
+  font-size: 28rpx;
+  color: #888888;
+}
+
+.com-detail-operator{
+  position: fixed;
+  width: 100%;
+  bottom:0;
+  height: 80rpx;
+  border-top:1rpx #d6dfe8 solid;
+  border-bottom:1rpx #d6dfe8 solid;
+  background-color: #fff;
+}
+.com-detail-operator text{
+  height: 80rpx;
+  display: block;
+  width: 50%;
+  font-size: 30rpx;
+  float: left;
+  text-align: center;
+  line-height: 80rpx;
+  box-sizing:border-box;
+}
+
+.com-detail-operator .call{
+  border-left:1rpx #d6dfe8 solid;
+}
+
+.com-detail-operator .sel{
+  color:#999;
+}
+.tell-text{
+  font-size: 36px;
+}
+.active-text{
+  color: #0077FF;
+}
+
+.instructions{
+  border-top:1rpx #d6dfe8 solid;
+  margin-top: 50rpx;
+  padding: 0;
+  background-color: #fff;
+  font-size: 28rpx;
+  position: relative;
+  top:-350rpx;
+}
+
+.instructions .cv{
+  padding: 20rpx 40rpx;
+  border-bottom:1rpx #d6dfe8 solid;
+  display:flex;
+  align-items:center;
+}
+.cv image{
+  width: 44rpx;
+  height: 44rpx;
+  margin-right: 40rpx;
+}
+
+.instructions text{
+  color:#999;
+  display: block;
+}
+
+.instructions text.lk{
+  padding-top: 10rpx;
+  color:#26adfa;
+  width:500rpx;
+  word-break: break-all;
+}
+.instructions text.copy-txt{
+  color:#0077FF;
+  padding-left: 20rpx;
+}
+
+page{
+  font-size: 16rpx;
+  background-color: #f1eff6;
+}
+.com-feed{
+  position: relative;
+  top: -300rpx;
+  padding-left:40rpx;
+}
+.no-company{
+  display: flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items: center;
+  font-size: 28rpx;
+  color: #888888;
+  padding-top: 300rpx;
+}
+.no-contact-pic{
+  width: 120rpx;
+  height: 120rpx;
+  margin-bottom: 20rpx;
+}

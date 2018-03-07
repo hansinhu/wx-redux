@@ -1,0 +1,83 @@
+<!--pages/contact/contactAdd/contactAdd.wxml-->
+<view class="container page-bg overflow-container-y">
+  <tipBox 
+    show-error="{{showError}}" 
+    error-text="{{errorText}}" 
+  />
+  <view class="weui-cells weui-cells_after-title mr-t-30">
+      <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__bd">
+              <input 
+                value="{{params.name}}"
+                maxlength="100"
+                bindblur="inputBlur"
+                focus='{{focusName}}'
+                bindconfirm="next"
+                data-name="name"
+                class="weui-input" />
+          </view>
+          <view 
+            class="{{focusName || params.name?'place-cover place-focus':'place-cover'}}" 
+            data-name="name" 
+            bindtap="showInput">公司名称(必填)</view>
+      </view>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__bd">
+              <input 
+                value="{{params.url}}"
+                maxlength="100"
+                bindblur="inputBlur"
+                focus='{{focusUrl}}'
+                bindconfirm="next"
+                data-name="url"
+                class="weui-input" />
+          </view>
+          <view 
+            class="{{focusUrl || params.url?'place-cover place-focus':'place-cover'}}" 
+            data-name="url" 
+            bindtap="showInput">公司官网</view>
+      </view>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__bd">
+              <input 
+                value="{{params.mainProduct}}"
+                maxlength="100"
+                bindblur="inputBlur"
+                focus='{{focusProduct}}'
+                bindconfirm="next"
+                data-name="mainProduct"
+                class="weui-input"  />
+          </view>
+          <view 
+            class="{{focusProduct || params.mainProduct?'place-cover place-focus':'place-cover'}}" 
+            data-name="mainProduct" 
+            bindtap="showInput">主要产品</view>
+      </view>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__bd">
+              <input 
+                value="{{params.mail}}"
+                maxlength="100"
+                bindblur="inputBlur"
+                focus='{{focusMail}}'
+                bindconfirm="subUser"
+                data-name="mail"
+                class="weui-input" />
+          </view>
+          <view 
+            class="{{focusMail || params.mail?'place-cover place-focus':'place-cover'}}" 
+            data-name="mail" 
+            bindtap="showInput">Email</view>
+      </view>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+      <button disabled='{{!params.name}}' bindtap='subUser' type="primary" class='btn-submit'>提交</button>
+  </view>
+
+</view>

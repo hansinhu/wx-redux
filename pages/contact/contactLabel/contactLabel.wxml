@@ -1,0 +1,29 @@
+<!--pages/contact/contactLabel/contactLabel.wxml-->
+<view class="container page-bg">
+
+  <view wx:if="{{!contact.labelList.length}}" class="no-contact">
+      <image class="no-contact-pic" src="/static/images/contact/nolabel.png"></image>
+      <text>暂无标签</text>
+  </view>
+
+  <view  wx:if="{{contact.labelList.length}}" class="weui-panel weui-panel_access">
+      <view class="tag-tile">标签列表</view>
+      <view class="weui-panel__bd">
+          <view 
+            wx:for='{{contact.labelList}}' 
+            wx:key="{{index}}"  
+            class="weui-media-box weui-media-box_text">
+            <navigator 
+              url="{{'../contactSearch/contactSearch?tagIds='+item.id+'&tagName='+item.tag+'&tagCount='+item.contactCount}}" 
+              class="label_media-box weui-media-box_appmsg" 
+              hover-class="weui-cell_active">
+                <view 
+                  class="weui-media-box__title weui-media-box__title_in-text">
+                  <text>{{item.tag}}</text>
+                  <text class="label-count">{{'('+item.contactCount+')'}}</text>
+                </view>
+              </navigator>
+          </view>
+      </view>
+  </view>
+</view>
